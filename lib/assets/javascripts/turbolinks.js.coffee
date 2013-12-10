@@ -10,7 +10,7 @@ createDocument = null
 xhr            = null
 
 
-fetchReplacement = (url) ->  
+fetchReplacement = (url) ->
   rememberReferer()
   cacheCurrentPage()
   triggerEvent 'page:fetch', url: url
@@ -28,7 +28,6 @@ fetchReplacement = (url) ->
       reflectNewUrl url
       changePage extractTitleAndBody(doc)...
       reflectRedirectedUrl()
-      resetScrollPosition()
       triggerEvent 'page:load'
     else
       document.location.href = url
